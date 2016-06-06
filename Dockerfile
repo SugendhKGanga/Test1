@@ -26,13 +26,15 @@ CMD ["mysqld_safe"]
 # Expose ports.
 EXPOSE 3306
 
-#COPY create_db.sh /create_db.sh
-#RUN chmod 777 /create_db.sh
-#RUN /create_db.sh
+COPY create_db.sh /create_db.sh
+RUN chmod 777 /create_db.sh
+RUN /create_db.sh
 
-RUN \
-      mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')"; && \
-      export MYSQL_USER=root && \
-      export MYSQL_PASSWORD=password && \
-      mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "create database wp"; && \
-      mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "FLUSH PRIVILEGES";
+RUN /create_db.sh
+
+#RUN \
+#      mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')"; && \
+#      export MYSQL_USER=root && \
+#      export MYSQL_PASSWORD=password && \
+#      mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "create database wp"; && \
+#      mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "FLUSH PRIVILEGES";
