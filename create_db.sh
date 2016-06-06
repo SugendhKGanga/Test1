@@ -1,4 +1,6 @@
 #!/bin/bash
+
+service mysql start
 mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')";
 
 #Specify MySQL User
