@@ -30,12 +30,9 @@ EXPOSE 3306
 #RUN chmod 777 /create_db.sh
 #RUN /create_db.sh
 
-RUN mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')";
-
-#Specify MySQL User
-RUN export MYSQL_USER=root
-#Specify MySQL Password
-RUN export MYSQL_PASSWORD=password
-
-RUN mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "create database wp";
-RUN mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "FLUSH PRIVILEGES";
+RUN \
+      mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')"; && \
+      export MYSQL_USER=root && \
+      export MYSQL_PASSWORD=password && \
+      mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "create database wp"; && \
+      mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "FLUSH PRIVILEGES";
