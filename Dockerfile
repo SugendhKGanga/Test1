@@ -25,3 +25,7 @@ CMD ["mysqld_safe"]
 
 # Expose ports.
 EXPOSE 3306
+
+COPY create_db.sh /create_db.sh
+RUN chmod 777 /create_db.sh
+RUN /create_db.sh
