@@ -31,6 +31,7 @@ EXPOSE 3306
 #RUN /create_db.sh
 
 RUN mysql -uroot -p""  &&  mysql create database wp;
+#RUN mysql -uroot -e "create database test;"
 
 #RUN \
 #      mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')"; && \
