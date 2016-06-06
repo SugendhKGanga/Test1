@@ -30,8 +30,6 @@ COPY create_db.sh /create_db.sh
 RUN chmod 777 /create_db.sh
 RUN /create_db.sh
 
-RUN /create_db.sh
-
 #RUN \
 #      mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')"; && \
 #      export MYSQL_USER=root && \
