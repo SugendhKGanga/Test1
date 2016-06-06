@@ -5,7 +5,11 @@ FROM ubuntu:14.04
         COPY wordpress-4.5.2.tar.gz /opt/wordpress-4.5.2.tar.gz
         RUN chmod 777 /entrypoint.sh
         RUN /entrypoint.sh
-        RUN tar xzvf /opt/wordpress-4.5.2.tar.gz
+        #RUN tar xzvf /opt/wordpress-4.5.2.tar.gz
+        COPY untar.sh /untar.sh
+	RUN chmod 777 /untar.sh
+	RUN /untar.sh
+	
         #RUN cp /opt/wordpress/wp-config-sample.php /opt/wordpress/wp-config.php
         COPY rename_configfile.sh /rename_configfile.sh
         RUN chmod 777 /rename_configfile.sh
