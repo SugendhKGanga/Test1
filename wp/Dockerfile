@@ -17,3 +17,4 @@ FROM ubuntu:14.04
         
         RUN rsync -avP /opt/wordpress/ /var/www/html/
         RUN mkdir /var/www/html/wp-content/uploads
+        RUN service apache2 start
