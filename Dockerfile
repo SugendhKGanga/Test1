@@ -30,7 +30,7 @@ EXPOSE 3306
 #RUN chmod 777 /create_db.sh
 #RUN /create_db.sh
 
-RUN mysql -uroot -p""  &&  mysql create database wp;
+#RUN mysql -uroot -p""  &&  mysql create database wp;
 #RUN mysql -uroot -e "create database test;"
 
 #RUN \
