@@ -20,7 +20,10 @@ VOLUME ["/etc/mysql", "/var/lib/mysql"]
 # Define working directory.
 WORKDIR /data
 
-# Define default command.
+COPY create_db.sh /create_db.sh
+RUN chmod 777 /create_db.sh
+ENTRYPOINT ["/create_db.sh"]
+# Define default command.]
 CMD ["mysqld_safe"]
 
 # Expose ports.
