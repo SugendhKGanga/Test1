@@ -22,8 +22,8 @@ WORKDIR /data
 
 COPY create_db.sh /create_db.sh
 RUN chmod 777 /create_db.sh
-RUN cd / && \
-    ./create_db.sh
+#RUN cd / && \
+#    ./create_db.sh
 #ENTRYPOINT ["/create_db.sh"]
 # Define default command.]
 CMD ["mysqld_safe"]
