@@ -26,13 +26,11 @@ RUN chmod 777 /create_db.sh
 #    ./create_db.sh
 #ENTRYPOINT ["/create_db.sh"]
 # Define default command.]
-CMD ["mysqld_safe"]
+CMD ["mysqld_safe", "cd / && ./create_db.sh"]
 
 # Expose ports.
 EXPOSE 3306
 
-RUN cd / && \
-    ./create_db.sh
 
 #COPY create_db.sh /create_db.sh
 #RUN chmod 777 /create_db.sh
