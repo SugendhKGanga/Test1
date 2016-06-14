@@ -1,6 +1,7 @@
 #!/bin/bash
 apt-get update
 apt-get install -y apache2
+sudo apt-get install -y unzip
 service apache2 start
 apt-get install -y php5 libapache2-mod-php5
 service apache2 restart
