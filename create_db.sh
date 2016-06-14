@@ -1,6 +1,6 @@
 #!/bin/bash
 
-service mysql start
+service mysql start && mysql -uroot -e "create database test1234;"
 #mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')";
 
 #Specify MySQL User
@@ -13,4 +13,4 @@ service mysql start
 
 #mysql  -e "create database wp";
 #mysql -e "FLUSH PRIVILEGES";
-mysql -uroot -e "create database test1234;"
+#mysql -uroot -e "create database test1234;"
