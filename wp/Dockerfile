@@ -18,4 +18,11 @@ FROM ubuntu:14.04
         
         RUN rsync -avP /opt/wordpress/ /var/www/html/
         RUN mkdir /var/www/html/wp-content/uploads
-        RUN service apache2 start
+        #RUN service apache2 start
+        
+        ENV APACHE_RUN_USER www-data
+	ENV APACHE_RUN_GROUP www-data
+	ENV APACHE_LOG_DIR /var/log/apache2
+	
+	CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+
