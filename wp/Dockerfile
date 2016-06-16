@@ -27,7 +27,5 @@ FROM ubuntu:14.04
 	env APACHE_RUN_DIR     /var/run/apache2
 	env APACHE_LOCK_DIR    /var/lock/apache2
 	env LANG               C
-
-	
 	CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
