@@ -12,8 +12,8 @@ FROM ubuntu:14.04
 	RUN /untar.sh
 	
         #RUN cp /opt/wordpress/wp-config-sample.php /opt/wordpress/wp-config.php
-        COPY ./wp/rename_configfile.sh /rename_configfile.sh
-        RUN chmod 777 /rename_configfile.sh
+        #COPY ./wp/rename_configfile.sh /rename_configfile.sh
+        #RUN chmod 777 /rename_configfile.sh
         #RUN /rename_configfile.sh
         
         RUN rsync -avP /opt/wordpress/ /var/www/html/
