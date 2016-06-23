@@ -16,10 +16,10 @@ RUN \
   rm -f /tmp/config
 
 # Define mountable directories.
-VOLUME ["/etc/mysql", "/var/lib/mysql"]
+#VOLUME ["/etc/mysql", "/var/lib/mysql"]
 
 # Define working directory.
-WORKDIR /data
+#WORKDIR /data
 
 COPY create_db.sh /create_db.sh
 RUN chmod 777 /create_db.sh
@@ -32,13 +32,6 @@ CMD ["mysqld_safe"]
 # Expose ports.
 EXPOSE 3306
 
-
-#COPY create_db.sh /create_db.sh
-#RUN chmod 777 /create_db.sh
-#RUN /create_db.sh
-
-#RUN mysql -uroot -p""  &&  mysql create database wp;
-#RUN mysql -uroot -e "create database test;"
 
 #RUN \
 #      mysql -e "SET PASSWORD FOR root@'localhost' = PASSWORD('password')"; && \
