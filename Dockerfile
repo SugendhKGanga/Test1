@@ -19,10 +19,10 @@ RUN \
 #VOLUME ["/etc/mysql", "/var/lib/mysql"]
 
 # Define working directory.
-WORKDIR /data
+#WORKDIR /data
 
-COPY create_db.sh /create_db.sh
-RUN chmod 777 /create_db.sh
+#COPY create_db.sh /create_db.sh
+#RUN chmod 777 /create_db.sh
 
 #ENTRYPOINT ["/create_db.sh"]
 # Define default command.]
