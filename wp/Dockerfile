@@ -3,11 +3,11 @@ FROM ubuntu:14.04
         EXPOSE 80
         COPY entrypoint.sh /entrypoint.sh
         #COPY wordpress-4.5.2.tar.gz /opt/wordpress-4.5.2.tar.gz
-        COPY ./wp/wordpress.zip /opt/wordpress.zip
+        COPY wordpress.zip /opt/wordpress.zip
         RUN chmod 777 /entrypoint.sh
         RUN /entrypoint.sh
         #RUN tar xzvf /opt/wordpress-4.5.2.tar.gz
-        COPY ./wp/untar.sh /untar.sh
+        COPY untar.sh /untar.sh
 	RUN chmod 777 /untar.sh
 	RUN /untar.sh
 	
