@@ -1,8 +1,7 @@
 FROM ubuntu:14.04
         RUN apt-get update
         EXPOSE 80
-	RUN pwd
-        COPY ./wp/entrypoint.sh /entrypoint.sh
+        COPY /var/lib/jenkins/workspace/Docker_Build/wp/entrypoint.sh /entrypoint.sh
         #COPY wordpress-4.5.2.tar.gz /opt/wordpress-4.5.2.tar.gz
         COPY ./wp/wordpress.zip /opt/wordpress.zip
         RUN chmod 777 /entrypoint.sh
